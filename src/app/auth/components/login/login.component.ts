@@ -11,6 +11,7 @@ import { LoginResponse } from '../../interface/login-response';
 })
 export class LoginComponent {
   isHide: boolean = true;
+  userToken: string = '';
 
   constructor(private _AuthService: AuthService) {}
 
@@ -21,8 +22,11 @@ export class LoginComponent {
 
   onLogin() {
     this._AuthService.login(this.loginForm.value).subscribe({
-      next: (resp:LoginResponse) => {
+      next: (resp: LoginResponse) => {
         console.log(resp);
+        this.userToken = resp.token;
+        localStorage.setItem('userToken', this.userToken);
+        this._AuthService.tokenDecode(this.userToken);
       },
       error: (err: HttpErrorResponse) => {
         console.log(err);

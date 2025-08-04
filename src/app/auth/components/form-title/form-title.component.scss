@@ -1,0 +1,9 @@
+@use "../../../../styles/variables" as *;
+
+.form-title {
+  h1 {
+    color: $dark-color;
+    font-size: 25px;
+    font-weight: 700;
+  }
+}

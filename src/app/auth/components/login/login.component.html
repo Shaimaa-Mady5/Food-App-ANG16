@@ -46,18 +46,16 @@
       />
 
       <!-- start:: eye icon  -->
-      <div
-        class="input-group-prepend cursor-pointer"
-        (click)="isHide = !isHide"
-      >
-        <span
-          class="input-group-text d-inline-block border-start-0 rounded-start-0 py-2"
-          id="UserPassword"
-          ><i
-            [class]="isHide ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye'"
-            class="text-dark-gray"
-          ></i
-        ></span>
+      <div class="input-group-prepend">
+        <a (click)="isHide = !isHide">
+          <span
+            class="input-group-text d-inline-block border-start-0 rounded-start-0 py-2 cursor-pointer"
+            id="UserPassword"
+            ><i
+              [class]="isHide ? 'fa-eye-slash' : ' fa-eye'"
+              class=" fa-regular text-dark-gray"
+            ></i></span
+        ></a>
       </div>
       <!-- end:: eye icon  -->
     </div>
@@ -66,9 +64,11 @@
     <!-- start::links -->
     <div class="links my-4 d-flex justify-content-between align-items-center">
       <a class="cursor-pointer text-decoration-none fw-medium text-dark-light"
+      routerLink="/register"
         >Register Now?</a
       >
       <a class="cursor-pointer text-decoration-none fw-medium text-main"
+      routerLink="/forget-password"
         >Forgot Password?</a
       >
     </div>

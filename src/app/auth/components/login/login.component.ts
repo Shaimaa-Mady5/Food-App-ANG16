@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../../service/auth.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { LoginResponse } from '../../interface/login-response';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent {
   isHide: boolean = true;
   userToken: string = '';
 
-  constructor(private _AuthService: AuthService) {}
+  constructor(private _AuthService: AuthService, private _Router:Router) {}
 
   loginForm: FormGroup = new FormGroup({
     email: new FormControl(''),
@@ -27,6 +28,7 @@ export class LoginComponent {
         this.userToken = resp.token;
         localStorage.setItem('userToken', this.userToken);
         this._AuthService.tokenDecode(this.userToken);
+        this._Router.navigate(['/home'])
       },
       error: (err: HttpErrorResponse) => {
         console.log(err);

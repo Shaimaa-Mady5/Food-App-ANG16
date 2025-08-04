@@ -1,0 +1,17 @@
+@use "../../../../styles/variables" as *;
+
+input::placeholder {
+  color: $dark-gray-color;
+}
+// .links {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   font-weight: 500;
+//   :nth-child(1) {
+//     color: $dark-light-color;
+//   }
+//   :nth-child(2) {
+//     color: $main-color;
+//   }
+// }

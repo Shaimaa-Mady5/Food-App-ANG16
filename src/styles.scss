@@ -4,3 +4,39 @@
 body {
   font-family: $main-family;
 }
+
+// colors
+.text-main {
+  color: $main-color;
+}
+.text-dark-color {
+  color: $dark-color;
+}
+.text-dark-light {
+  color: $dark-light-color;
+}
+.text-gray-color {
+  color: $gray-color;
+}
+.text-dark-gray {
+  color: $dark-gray-color;
+}
+.text-white-color{
+  color: $white-color;
+}
+// button style
+button {
+  border-radius: 8px;
+  border: none;
+  &.green-btn {
+    background-color: $main-color;
+    color: $white-color;
+  }
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+// .form-control:focus {
+//   border-color: $main-color;
+//   box-shadow: none;
+// }

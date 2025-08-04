@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AuthService } from '../../service/auth.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { LoginResponse } from '../../interface/login-response';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +12,21 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class LoginComponent {
   isHide: boolean = true;
 
+  constructor(private _AuthService: AuthService) {}
+
   loginForm: FormGroup = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
   });
 
-  onLogin() {}
+  onLogin() {
+    this._AuthService.login(this.loginForm.value).subscribe({
+      next: (resp:LoginResponse) => {
+        console.log(resp);
+      },
+      error: (err: HttpErrorResponse) => {
+        console.log(err);
+      },
+    });
+  }
 }

@@ -6,7 +6,7 @@
   ></app-form-title>
 
   <!-- start:: form  -->
-  <form>
+  <form [formGroup]="loginForm">
     <!-- start::email -->
     <div class="input-group my-4 align-items-center">
       <div class="input-group-prepend">
@@ -22,6 +22,7 @@
         placeholder="Enter your E-mail"
         aria-label="UserEmail"
         aria-describedby="UserEmail"
+        formControlName="email"
       />
     </div>
     <!-- end::email -->
@@ -41,6 +42,7 @@
         placeholder="Enter your password"
         aria-label="UserPassword"
         aria-describedby="UserPassword"
+        formControlName="password"
       />
 
       <!-- start:: eye icon  -->

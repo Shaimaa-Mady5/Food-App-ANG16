@@ -36,7 +36,7 @@
         ></span>
       </div>
       <input
-        type="text"
+        [type]="isHide ? 'password' : 'text'"
         class="form-control bg-light border-end-0 py-2"
         placeholder="Enter your password"
         aria-label="UserPassword"
@@ -44,20 +44,31 @@
       />
 
       <!-- start:: eye icon  -->
-      <div class="input-group-prepend cursor-pointer">
+      <div
+        class="input-group-prepend cursor-pointer"
+        (click)="isHide = !isHide"
+      >
         <span
           class="input-group-text d-inline-block border-start-0 rounded-start-0 py-2"
           id="UserPassword"
-          ><i class="fa-regular fa-eye text-dark-gray"></i
+          ><i
+            [class]="isHide ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye'"
+            class="text-dark-gray"
+          ></i
         ></span>
       </div>
+      <!-- end:: eye icon  -->
     </div>
     <!-- end::Password -->
 
     <!-- start::links -->
     <div class="links my-4 d-flex justify-content-between align-items-center">
-      <a class="cursor-pointer text-decoration-none fw-medium text-dark-light">Register Now?</a>
-      <a class="cursor-pointer text-decoration-none fw-medium text-main">Forgot Password?</a>
+      <a class="cursor-pointer text-decoration-none fw-medium text-dark-light"
+        >Register Now?</a
+      >
+      <a class="cursor-pointer text-decoration-none fw-medium text-main"
+        >Forgot Password?</a
+      >
     </div>
     <!-- end::links -->
 

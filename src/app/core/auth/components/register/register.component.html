@@ -10,9 +10,11 @@
   <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
     <div class="container-flued">
       <div class="row justify-content-between">
+
         <!-- start::image -->
         <div class="col-lg-8 mx-auto mb-3">
           <ngx-dropzone
+          [multiple]="false"
             (change)="onSelect($event)"
             class="rounded-circle w-50 mx-auto position-relative"
           >

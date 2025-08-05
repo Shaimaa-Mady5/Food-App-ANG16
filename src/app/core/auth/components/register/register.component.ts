@@ -29,7 +29,7 @@ export class RegisterComponent {
 
   onRegister() {
     console.log(this.registerForm.value);
-    
+
     this._AuthService.register(this.registerForm.value).subscribe({
       next: (resp: RegisterResponse) => {
         console.log(resp);
@@ -37,7 +37,20 @@ export class RegisterComponent {
       error: (err: HttpErrorResponse) => {
         console.log(err);
       },
-      
     });
   }
+
+  // start::image dropZone
+  files: File[] = [];
+
+  onSelect(event:any) {
+    console.log(event);
+    this.files.push(...event.addedFiles);
+  }
+
+  onRemove(event:any) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
+  }
+  // end::image dropZone
 }

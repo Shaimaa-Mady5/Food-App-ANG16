@@ -10,6 +10,36 @@
   <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
     <div class="container-flued">
       <div class="row justify-content-between">
+        <!-- start::image -->
+        <div class="col-lg-8 mx-auto mb-3">
+          <ngx-dropzone
+            (change)="onSelect($event)"
+            class="rounded-circle w-50 mx-auto position-relative"
+          >
+            <ngx-dropzone-label>Select or Drop your image!</ngx-dropzone-label>
+            <ngx-dropzone-preview
+              class="mx-auto rounded-circle"
+              *ngFor="let f of files"
+              [removable]="true"
+              (removed)="onRemove(f)"
+            >
+              <!-- <ngx-dropzone-label
+                >{{ f.name }} ({{ f.type }})</ngx-dropzone-label
+              > -->
+            </ngx-dropzone-preview>
+            <!-- start::preview  -->
+            <ngx-dropzone-image-preview
+              class="rounded-circle mx-auto w-50 position-absolute z-3"
+              ngProjectAs="ngx-dropzone-preview"
+              *ngFor="let f of files"
+              [file]="f"
+            >
+              <!-- <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label> -->
+            </ngx-dropzone-image-preview>
+            <!-- end::preview  -->
+          </ngx-dropzone>
+        </div>
+        <!-- end::image  -->
 
         <!-- start::userName -->
         <div class="col-lg-5">

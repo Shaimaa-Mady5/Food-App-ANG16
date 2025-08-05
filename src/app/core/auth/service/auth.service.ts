@@ -9,7 +9,7 @@ import { jwtDecode } from 'jwt-decode';
   providedIn: 'root',
 })
 export class AuthService {
-  mainUrl: string = 'https://upskilling-egypt.com:3006';
+  mainUrl: string = 'https://upskilling-egypt.com:3006/api/v1/';
 
   constructor(private _HttpClient: HttpClient) {}
 
@@ -23,9 +23,15 @@ export class AuthService {
   // start::login 
   login(user: LoginUser): Observable<LoginResponse> {
     return this._HttpClient.post<LoginResponse>(
-      this.mainUrl + '/api/v1/Users/Login',
+      this.mainUrl + 'Users/Login',
       user
     );
   }
   // end::login 
+
+  // start::register
+  register(user:any):Observable<any>{
+   return this._HttpClient.post(this.mainUrl+'users/register',user)
+  }
+  // end::register
 }

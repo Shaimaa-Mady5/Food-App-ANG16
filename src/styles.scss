@@ -40,3 +40,8 @@ button {
 //   border-color: $main-color;
 //   box-shadow: none;
 // }
+
+input::placeholder {
+  color: $dark-gray-color;
+  font-size: 13px;
+}

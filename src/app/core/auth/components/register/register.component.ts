@@ -12,6 +12,7 @@ import { LoginResponse } from '../../interface/login-response';
 })
 export class RegisterComponent {
    isHide: boolean = true;
+   isHideConfirmPassword: boolean = true;
     userToken: string = '';
   
     constructor(private _AuthService: AuthService, private _Router:Router) {}

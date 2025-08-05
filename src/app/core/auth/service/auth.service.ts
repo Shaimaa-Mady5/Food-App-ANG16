@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { LoginUser } from '../interface/login-user';
 import { LoginResponse } from '../interface/login-response';
 import { jwtDecode } from 'jwt-decode';
+import { RegisterResponse } from '../interface/register-response';
+import { RegisterUser } from '../interface/register-user';
 
 @Injectable({
   providedIn: 'root',
@@ -30,8 +32,8 @@ export class AuthService {
   // end::login 
 
   // start::register
-  register(user:any):Observable<any>{
-   return this._HttpClient.post(this.mainUrl+'users/register',user)
+  register(user:RegisterUser):Observable<RegisterResponse>{
+   return this._HttpClient.post<RegisterResponse>(this.mainUrl+'users/register',user)
   }
   // end::register
 }

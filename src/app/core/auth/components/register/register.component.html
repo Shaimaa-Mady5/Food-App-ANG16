@@ -7,16 +7,17 @@
   <!--end:: form title  -->
 
   <!-- start:: form  -->
-  <form [formGroup]="loginForm" (ngSubmit)="onRegister()">
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
     <div class="container-flued">
       <div class="row justify-content-between">
+
         <!-- start::userName -->
         <div class="col-lg-5">
           <div class="input-group my-2 align-items-center">
             <div class="input-group-prepend">
               <span
                 class="input-group-text d-inline-block border-end-0 rounded-end-0 py-2"
-                id="UserEmail"
+                id="userName"
                 ><i class="fa-regular fa-user text-dark-gray"></i
               ></span>
             </div>
@@ -26,7 +27,7 @@
               placeholder="Enter your name"
               aria-label="userName"
               aria-describedby="userName"
-              formControlName="userName "
+              formControlName="userName"
             />
           </div>
         </div>
@@ -43,7 +44,7 @@
               ></span>
             </div>
             <input
-              type="text"
+              type="email"
               class="form-control bg-light p-2"
               placeholder="Enter your E-mail"
               aria-label="UserEmail"
@@ -60,7 +61,7 @@
             <div class="input-group-prepend">
               <span
                 class="input-group-text d-inline-block border-end-0 rounded-end-0 py-2"
-                id="UserEmail"
+                id="UserCountry"
                 ><i class="fa-solid fa-globe text-dark-gray"></i
               ></span>
             </div>
@@ -83,17 +84,17 @@
             <div class="input-group-prepend">
               <span
                 class="input-group-text d-inline-block border-end-0 rounded-end-0 py-2"
-                id="UserEmail"
+                id="Phone"
                 ><i class="fa-solid fa-mobile-screen text-dark-gray"></i
               ></span>
             </div>
             <input
-              type="text"
+              type="tel"
               class="form-control bg-light p-2"
               placeholder="Enter your phone"
               aria-label="Phone"
               aria-describedby="Phone"
-              formControlName="phoneNumber "
+              formControlName="phoneNumber"
             />
           </div>
         </div>
@@ -142,7 +143,7 @@
             <div class="input-group-prepend">
               <span
                 class="input-group-text d-inline-block border-end-0 rounded-end-0 py-2"
-                id="UserPassword"
+                id="userConfirmPassword"
                 ><i class="fa-solid fa-lock text-dark-gray"></i
               ></span>
             </div>
@@ -150,9 +151,9 @@
               [type]="isHideConfirmPassword ? 'password' : 'text'"
               class="form-control bg-light border-end-0 py-2"
               placeholder="Enter your password"
-              aria-label="UserPassword"
-              aria-describedby="UserPassword"
-              formControlName="password"
+              aria-label="userConfirmPassword"
+              aria-describedby="userConfirmPassword"
+              formControlName="confirmPassword"
             />
 
             <!-- start:: eye icon  -->

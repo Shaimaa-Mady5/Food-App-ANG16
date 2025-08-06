@@ -29,9 +29,15 @@ body {
 button {
   border-radius: 8px;
   border: none;
+  cursor: pointer;
   &.green-btn {
     background-color: $main-color;
     color: $white-color;
+  }
+  &.green-btn:disabled{
+    background-color: $main-color-disabled;
+    cursor: unset;
+
   }
 }
 .cursor-pointer{

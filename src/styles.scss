@@ -1,5 +1,6 @@
 @use "./styles/variables" as *;
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"); /* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
 
 body {
   font-family: $main-family;
@@ -28,9 +29,15 @@ body {
 button {
   border-radius: 8px;
   border: none;
+  cursor: pointer;
   &.green-btn {
     background-color: $main-color;
     color: $white-color;
+  }
+  &.green-btn:disabled{
+    background-color: $main-color-disabled;
+    cursor: unset;
+
   }
 }
 .cursor-pointer{
@@ -40,3 +47,8 @@ button {
 //   border-color: $main-color;
 //   box-shadow: none;
 // }
+
+input::placeholder {
+  color: $dark-gray-color;
+  font-size: 13px;
+}

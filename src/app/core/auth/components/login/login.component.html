@@ -17,7 +17,8 @@
         ></span>
       </div>
       <input
-        type="text"
+        #email
+        type="email"
         class="form-control bg-light p-2"
         placeholder="Enter your E-mail"
         aria-label="UserEmail"
@@ -26,6 +27,23 @@
       />
     </div>
     <!-- end::email -->
+
+    <!-- start::email validation  -->
+    <div
+      class="alert alert-danger my-3"
+      *ngIf="
+        loginForm.get('email')?.errors &&
+        (loginForm.get('email')?.touched || email.value.length > 0)
+      "
+    >
+      <p *ngIf="loginForm.get('email')?.getError('required')">
+        Email is required
+      </p>
+      <p *ngIf="loginForm.get('email')?.getError('email')">
+        Invalid Email Format
+      </p>
+    </div>
+    <!-- end::email validation  -->
 
     <!-- start::Password -->
     <div class="input-group my-4">
@@ -37,6 +55,7 @@
         ></span>
       </div>
       <input
+        #password
         [type]="isHide ? 'password' : 'text'"
         class="form-control bg-light border-end-0 py-2"
         placeholder="Enter your password"
@@ -53,7 +72,7 @@
             id="UserPassword"
             ><i
               [class]="isHide ? 'fa-eye-slash' : ' fa-eye'"
-              class=" fa-regular text-dark-gray"
+              class="fa-regular text-dark-gray"
             ></i></span
         ></a>
       </div>
@@ -61,21 +80,49 @@
     </div>
     <!-- end::Password -->
 
+    <!-- start::password validation  -->
+    <div
+      class="alert alert-danger my-3"
+      *ngIf="
+        loginForm.get('password')?.errors &&
+        (loginForm.get('password')?.touched || password.value.length > 0)
+      "
+    >
+      <p *ngIf="loginForm.get('password')?.getError('required')">
+        password is required
+      </p>
+      <p *ngIf="loginForm.get('password')?.getError('pattern')">
+        Invalid password
+      </p>
+      <p *ngIf="loginForm.get('password')?.getError('minlength')">
+        password must be at least 6 characters
+      </p>
+    </div>
+    <!-- end::password validation  -->
+
     <!-- start::links -->
     <div class="links my-4 d-flex justify-content-between align-items-center">
-      <a class="cursor-pointer text-decoration-none fw-medium text-dark-light"
-      routerLink="/register"
+      <a
+        class="cursor-pointer text-decoration-none fw-medium text-dark-light"
+        routerLink="/register"
         >Register Now?</a
       >
-      <a class="cursor-pointer text-decoration-none fw-medium text-main"
-      routerLink="/forget-password"
+      <a
+        class="cursor-pointer text-decoration-none fw-medium text-main"
+        routerLink="/forget-password"
         >Forgot Password?</a
       >
     </div>
     <!-- end::links -->
 
     <!-- start::button -->
-    <button type="submit" class="green-btn w-100 my-2 p-2">Login</button>
+    <button
+      type="submit"
+      class="green-btn w-100 my-2 p-2 "
+      [disabled]="loginForm.invalid"
+    >
+      Login
+    </button>
   </form>
   <!-- end:: form  -->
 </div>

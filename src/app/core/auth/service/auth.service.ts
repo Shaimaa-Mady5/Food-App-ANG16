@@ -4,12 +4,14 @@ import { Observable } from 'rxjs';
 import { LoginUser } from '../interface/login-user';
 import { LoginResponse } from '../interface/login-response';
 import { jwtDecode } from 'jwt-decode';
+import { RegisterResponse } from '../interface/register-response';
+import { RegisterUser } from '../interface/register-user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  mainUrl: string = 'https://upskilling-egypt.com:3006';
+  mainUrl: string = 'https://upskilling-egypt.com:3006/api/v1/';
 
   constructor(private _HttpClient: HttpClient) {}
 
@@ -23,9 +25,15 @@ export class AuthService {
   // start::login 
   login(user: LoginUser): Observable<LoginResponse> {
     return this._HttpClient.post<LoginResponse>(
-      this.mainUrl + '/api/v1/Users/Login',
+      this.mainUrl + 'Users/Login',
       user
     );
   }
   // end::login 
+
+  // start::register
+  register(user:RegisterUser):Observable<RegisterResponse>{
+   return this._HttpClient.post<RegisterResponse>(this.mainUrl+'users/register',user)
+  }
+  // end::register
 }

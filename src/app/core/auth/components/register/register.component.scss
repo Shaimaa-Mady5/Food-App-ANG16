@@ -1,0 +1,15 @@
+// [_nghost-ng-c3821590306] img[_ngcontent-ng-c3821590306] {
+//     max-height: 100%;
+//     border-radius: 50% ;
+//     opacity: .8;
+// }
+
+// change image-preview radius
+::ng-deep ngx-dropzone-image-preview img {
+  border-radius: 50% !important;
+}
+// preview image position direction for main dropzone 
+ngx-dropzone-image-preview {
+  top: 8px;
+  left: 60px;
+}

@@ -9,6 +9,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { VerifyComponent } from './components/verify/verify.component';
 
 
 
@@ -20,7 +21,8 @@ import { LoginComponent } from './components/login/login.component';
     ResetPasswordComponent,
     ChangePasswordComponent,
     AuthComponent,
-    FormTitleComponent
+    FormTitleComponent,
+    VerifyComponent
   ],
   imports: [CommonModule, AuthRoutingModule,SharedModule],
 })

@@ -6,6 +6,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './components/login/login.component';
+import { VerifyComponent } from './components/verify/verify.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
         component: ChangePasswordComponent,
         title: 'change-password',
       },
+      { path: 'verify', component: VerifyComponent, title: 'verify-account' },
     ],
   },
 ];

@@ -66,5 +66,6 @@ export class RegisterComponent {
 
   showSuccess() {
     this._ToastrService.success(this.successMsg);
+    this._Router.navigate(['/verify'])
   }
 }

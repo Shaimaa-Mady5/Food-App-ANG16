@@ -6,6 +6,7 @@ import { LoginResponse } from '../interface/login-response';
 import { jwtDecode } from 'jwt-decode';
 import { RegisterResponse } from '../interface/register-response';
 import { RegisterUser } from '../interface/register-user';
+import { ResetDetails } from '../interface/reset-details';
 
 @Injectable({
   providedIn: 'root',
@@ -40,6 +41,12 @@ export class AuthService {
   // start::forgetPassword
   forgetPassword(userEmail:string) :Observable<RegisterResponse>{
    return this._HttpClient.post<RegisterResponse>(this.mainUrl+'Users/Reset/Request',userEmail)
+  }
+  // end::forgetPassword
+
+    // start::forgetPassword
+  resetPassword(userEmail:ResetDetails) :Observable<RegisterResponse>{
+   return this._HttpClient.post<RegisterResponse>(this.mainUrl+'Users/Reset',userEmail)
   }
   // end::forgetPassword
 }

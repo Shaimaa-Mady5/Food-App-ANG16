@@ -187,6 +187,9 @@
             <p *ngIf="registerForm.get('phoneNumber')?.getError('required')">
               Phone number is required
             </p>
+            <p *ngIf="registerForm.get('phoneNumber')?.getError('pattern')">
+              Invalid format number
+            </p>
           </div>
           <!-- end::phoneNumber show validation -->
         </div>

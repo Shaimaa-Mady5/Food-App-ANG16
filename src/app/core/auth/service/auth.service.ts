@@ -36,4 +36,10 @@ export class AuthService {
    return this._HttpClient.post<RegisterResponse>(this.mainUrl+'users/register',user)
   }
   // end::register
+
+  // start::forgetPassword
+  forgetPassword(userEmail:string) :Observable<RegisterResponse>{
+   return this._HttpClient.post<RegisterResponse>(this.mainUrl+'Users/Reset/Request',userEmail)
+  }
+  // end::forgetPassword
 }

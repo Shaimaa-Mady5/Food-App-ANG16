@@ -22,7 +22,7 @@ import { VerifyComponent } from './components/verify/verify.component';
     ChangePasswordComponent,
     AuthComponent,
     FormTitleComponent,
-    VerifyComponent
+    VerifyComponent,
   ],
   imports: [CommonModule, AuthRoutingModule,SharedModule],
 })

@@ -1,1 +1,31 @@
-<p>not-found works!</p>
+<section class="min-vh-100 bg-notFound px-5 py-3">
+  <!-- start::logo  -->
+  <div>
+    <img src="../../../../assets/images/logo-text.svg" alt="" />
+  </div>
+  <!-- end::logo  -->
+
+  <!-- start::main-content  -->
+  <div class="mt-5">
+    <h2 class="text-dark-primar fw-bolder">Oops....</h2>
+    <h1 class="text-main">Page not found</h1>
+    <p class="text-dark-light w-320">
+      This Page doesn’t exist or was removed! We suggest you back to home.
+    </p>
+
+    <!-- start::button -->
+    <div
+      class="mt-5 w-320 text-white-color bg-green-color rounded-3 py-1 d-flex justify-content-center align-items-center"
+      role="button"
+      routerLink="/home"
+    >
+      <i class="fa-solid fa-arrow-left"></i>
+      <button class="bg-transparent text-white-color">
+        Back To <br />
+        Home
+      </button>
+    </div>
+    <!-- end::button -->
+  </div>
+  <!-- end::main-content  -->
+</section>

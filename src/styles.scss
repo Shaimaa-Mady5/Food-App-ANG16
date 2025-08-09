@@ -25,8 +25,14 @@ body {
 .text-white-color{
   color: $white-color;
 }
+.text-dark-primary{
+  color: $dark-primary;
+}
+.bg-green-color{
+  background-color: $main-color;
+}
 // button style
-button {
+button{
   border-radius: 8px;
   border: none;
   cursor: pointer;

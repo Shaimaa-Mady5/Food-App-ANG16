@@ -1,0 +1,9 @@
+.bg-notFound {
+  background-image: url("../../../../assets/images/notFound-bg404.png"),url("../../../../assets/images/notFound-bgBlank.png");
+    background-position: right bottom;
+    background-size: 40% 60%, 50% 100%;
+    background-repeat: no-repeat;
+    .w-320{
+      width: 320px;
+    }
+}
